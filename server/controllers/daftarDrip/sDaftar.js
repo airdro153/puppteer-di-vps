@@ -39,10 +39,14 @@ const garap = async (chrome, refCode) => {
 
     await actionP.fillInputsArry(kerja, '.mb-16 input', refCode)
 
-    // await actionP.clickSelector(kerja, '#app > div > div.max-w-2xl.text-center > form > button')
+    // const hasil = await actionP.clickSelector(kerja, '#app > div > div.max-w-2xl.text-center > form > button')
     // await kerja.waitForSelector("#headlessui-dialog-panel-\\:ra\\: > div")
 
-    return pharse
+    if (hasil === 'click') {
+        return { status: 'succses', pharse: pharse }
+    } else {
+        return { status: 'fail', pharse: null }
+    }
 
 
 }

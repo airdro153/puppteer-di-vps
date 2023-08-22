@@ -33,11 +33,12 @@ function generate_random_ip() {
 
 }
 
-const browserWithoutProxy = async (extansion, URL) => {
+const browserWithoutProxy = async (extansion) => {
     const browser = await puppeteer.launch({
         headless: false,
         args: [
-            `--load-extension=${extansion}`
+            `--load-extension=${extansion}`,
+            '--no-sandbox'
         ]
     });
     const page = await browser.newPage();
