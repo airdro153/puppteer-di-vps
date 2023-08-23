@@ -22,5 +22,10 @@ const daftarDrip = async (refCode) => {
 
 }
 
+// const test = async () => {
+//     const data = await daftarDrip('8pCnGuXy')
+//     console.log(data)
 
+// }
+// test()
 module.exports = daftarDrip
