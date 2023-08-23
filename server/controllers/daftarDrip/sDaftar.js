@@ -37,18 +37,16 @@ const garap = async (chrome, refCode) => {
     const popup2 = await actionP.handlePopUpExtansion(browser);
     await actionP.clickSelector(popup2, '#root > div > div.sc-bdvvtL.dvIiel > div > div.sc-bZSZLb.sc-faIbUi.dpOAcL.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY')
 
-    await actionP.fillInputsArry(kerja, '.mb-16 input', refCode)
+    await actionP.fillInputsArray(kerja, '.mb-16 input', refCode)
+    await actionP.clickSelector(kerja, '#app > div > div.max-w-2xl.text-center > form > button')
+    await kerja.waitForSelector("#headlessui-dialog-panel-\\:ra\\: > div")
 
-    // const hasil = await actionP.clickSelector(kerja, '#app > div > div.max-w-2xl.text-center > form > button')
-    // await kerja.waitForSelector("#headlessui-dialog-panel-\\:ra\\: > div")
-
-    if (hasil === 'click') {
-        return { status: 'succses', pharse: pharse }
+    const text = await actionP.extractTextFromSelector(kerja, "#headlessui-dialog-panel-\\:ra\\: > div > div > h2")
+    if (text === 'Welcome to DRiP!') {
+        return { status: 'success', pharse: pharse.join(' ') }
     } else {
         return { status: 'fail', pharse: null }
     }
-
-
 }
 
 module.exports = garap

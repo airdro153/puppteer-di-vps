@@ -1,6 +1,7 @@
 const express = require('express')
 const daftarDrip = require('./controllers/daftarDrip/daftardrip')
 const subscribeDrip = require('./controllers/subDrip/subscribe')
+const getCodeInvite = require('./controllers/getInvaiteCode/getcode')
 
 const app = express()
 app.use(express.json())
@@ -28,6 +29,11 @@ app.post('/api/subscribe', async (req, res) => {
 
 })
 
+app.post('/api/getcode', async (req, res) => {
+    const Wallet = req.body.privateKeyOrPharse
+    const code = await getCodeInvite(Wallet)
+    res.json(code)
+})
 
 
 
