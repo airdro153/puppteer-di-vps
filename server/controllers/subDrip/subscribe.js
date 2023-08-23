@@ -17,6 +17,7 @@ const loginSubscribe = async (privateKey) => {
             await chrome.browser.close()
             return { status: 'success', subscribe: valid.length }
         } else {
+            await chrome.browser.close()
             return { status: 'failed' }
         }
 
@@ -28,6 +29,7 @@ const loginSubscribe = async (privateKey) => {
             await chrome.browser.close()
             return { status: 'success', subscribe: valid.length }
         } else {
+            await chrome.browser.close()
             return { status: 'failed' }
         }
     }
