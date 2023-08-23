@@ -9,7 +9,7 @@ const phantom = path.join(__dirname, '..', '..', '..', 'Extensions', 'bfnaelmome
 const daftarDrip = async (refCode) => {
     const chrome = await Chrome(phantom)
     const pharse = await daftar(chrome, refCode)
-
+    await chrome.browser.close();
     return pharse
 
 }
