@@ -14,7 +14,7 @@
     "puppeteer": "^21.1.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
-    "puppeteer_handles": "^1.0.0",
+    "puppeteer_handles": "^1.0.2",
     "user-agents": "^1.0.1444"
   }
 }

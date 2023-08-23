@@ -34,9 +34,9 @@ const loginSubscribe = async (privateKey) => {
 }
 
 // const test = async () => {
-//     const privateKey = 'RQzo1sksKWvVtdwUMsNrtAg4bovzhwJ17FeWmniYc8evRTEFthFU1ZYWhgYZRaC7YDXE4g4wPxTqhVjXkZG2wVM'
+//     const privateKey = '3pqqYjx3an5NycWpvCWxXAo6xu7bNburDgn4eVGSTBDuC9m3yi3F2PNMb2RvmxMKBBgy12a6U4b2qsUhEKEQsznm'
 //     const pharse = 'ripple venue shove master wheat one tourist license very attend enact minor'
-//     const hasil = await loginSubscribe(pharse)
+//     const hasil = await loginSubscribe(privateKey)
 //     console.log(hasil)
 
 // }

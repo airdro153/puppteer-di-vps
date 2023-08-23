@@ -30,7 +30,6 @@ const loginWithPharse = async (chrome, pharse) => {
 
     const text = await actionP.extractTextFromSelector(page, '#app > div > main > div.mx-auto.rounded.p-3.animate-gradient.bg-gradient-animation.bg-\\[length\\:200\\%_200\\%\\].mb-8 > div > div.text-left.md\\:ml-6.md\\:flex-1 > p.text-xl.mb-2.leading-tight')
     if (text === 'Have you thanked a creator today?') {
-        console.log(text)
         return true
     } else {
         return false
