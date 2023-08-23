@@ -10,14 +10,17 @@ const getCodeRef = async (privateKey) => {
     if (privateKey.includes(' ')) {
         const login = await loginWithPharse(chrome, privateKey)
         if (login === 'Your account has been banned.') {
+            await chrome.browser.close()
             return { status: login }
 
         } else {
             const code = await getCodeInvite(chrome)
             if (code) {
+                await chrome.browser.close()
                 return { status: 'success', InviteCode: code }
 
             } else {
+                await chrome.browser.close()
                 return { status: 'failed' }
 
             }
@@ -27,14 +30,17 @@ const getCodeRef = async (privateKey) => {
     } else {
         const login = await loginWithPrivateKey(chrome, privateKey)
         if (login === 'Your account has been banned.') {
+            await chrome.browser.close()
             return { status: login }
 
         } else {
             const code = await getCodeInvite(chrome)
             if (code) {
+                await chrome.browser.close()
                 return { status: 'success', InviteCode: code }
 
             } else {
+                await chrome.browser.close()
                 return { status: 'failed' }
 
             }

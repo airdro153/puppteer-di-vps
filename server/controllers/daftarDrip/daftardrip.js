@@ -12,8 +12,10 @@ const daftarDrip = async (refCode) => {
     if (pharse.status === 'success') {
         const valid = await subscribe(chrome)
         if (valid) {
+            await chrome.browser.close()
             return { status: 'success', subscribe: valid.length, pharse: pharse.pharse }
         } else {
+            await chrome.browser.close()
             return { status: 'failed' }
         }
     }
