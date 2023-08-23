@@ -11,7 +11,7 @@ app.use(express.json())
 app.post('/api/daftar', async (req, res) => {
     const codeRef = req.body.refCode
     const pharse = await daftarDrip(codeRef)
-    if (pharse.status === 'succses') {
+    if (pharse.status === 'success') {
         res.json(pharse)
     } else {
         res.status(500).json(pharse)
