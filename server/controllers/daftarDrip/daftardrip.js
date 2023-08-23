@@ -9,8 +9,14 @@ const phantom = path.join(__dirname, '..', '..', '..', 'Extensions', 'bfnaelmome
 const daftarDrip = async (refCode) => {
     const chrome = await Chrome(phantom)
     const pharse = await daftar(chrome, refCode)
-    await chrome.browser.close();
-    return pharse
+    if (pharse.status === 'success') {
+        const valid = await subscribe(chrome)
+        if (valid) {
+            return { status: 'success', subscribe: valid.length, pharse: pharse.pharse }
+        } else {
+            return { status: 'failed' }
+        }
+    }
 
 }
 

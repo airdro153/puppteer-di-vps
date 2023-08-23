@@ -15,7 +15,7 @@ const loginSubscribe = async (privateKey) => {
         if (succses === true) {
             const valid = await subscribe(chrome)
             await chrome.browser.close()
-            return { status: 'succeed', subscribe: valid.length }
+            return { status: 'success', subscribe: valid.length }
         } else {
             return { status: 'failed' }
         }
@@ -26,20 +26,11 @@ const loginSubscribe = async (privateKey) => {
         if (succses === true) {
             const valid = await subscribe(chrome)
             await chrome.browser.close()
-            return { status: 'succeed', subscribe: valid.length }
+            return { status: 'success', subscribe: valid.length }
         } else {
             return { status: 'failed' }
         }
     }
 }
 
-// const test = async () => {
-//     const privateKey = '3pqqYjx3an5NycWpvCWxXAo6xu7bNburDgn4eVGSTBDuC9m3yi3F2PNMb2RvmxMKBBgy12a6U4b2qsUhEKEQsznm'
-//     const pharse = 'ripple venue shove master wheat one tourist license very attend enact minor'
-//     const hasil = await loginSubscribe(privateKey)
-//     console.log(hasil)
-
-// }
-
-// test()
 module.exports = loginSubscribe
