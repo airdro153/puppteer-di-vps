@@ -1,6 +1,6 @@
 const actionP = require('puppeteer_handles')
 
-const loginWithPharse = async (chrome) => {
+const loginWithPharse = async (chrome, pharse) => {
     let page = chrome.page
     const browser = chrome.browser
     await page.goto('https://drip.haus/')
@@ -8,7 +8,6 @@ const loginWithPharse = async (chrome) => {
     const phantom = await actionP.switchToSecondTab(browser, 'chrome-extension://bfnaelmomeimhlpmgjnjophhpkkoljpa/onboarding.html')
     await actionP.clickSelector(phantom, '#root > main > div.sc-jlRLRk.ittrOY > div > div.sc-llYSUQ.sc-jHkVzv.cqBDfb.dyVEVs > button.sc-eCImPb.fajfuv')
 
-    const pharse = "ripple venue shove master wheat one tourist license very attend enact minor";
     await actionP.impotPharsePhantom(phantom, pharse, '#root > main > div.sc-jlRLRk.ittrOY > form > div > div.sc-cCcXHH.cdwAbJ > div:nth-child(1) > input')
     await actionP.clickSelector(phantom, '#root > main > div.sc-jlRLRk.ittrOY > form > button')
     await actionP.clickSelector(phantom, '#root > main > div.sc-jlRLRk.ittrOY > form > button.sc-eCImPb.fajfuv.sc-XxNYO.wqvHD')
@@ -29,6 +28,13 @@ const loginWithPharse = async (chrome) => {
     const popup2 = await actionP.handlePopUpExtansion(browser);
     await actionP.clickSelector(popup2, '#root > div > div.sc-bdvvtL.dvIiel > div > div.sc-bZSZLb.sc-faIbUi.dpOAcL.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY')
 
+    const text = await actionP.extractTextFromSelector(page, '#app > div > main > div.mx-auto.rounded.p-3.animate-gradient.bg-gradient-animation.bg-\\[length\\:200\\%_200\\%\\].mb-8 > div > div.text-left.md\\:ml-6.md\\:flex-1 > p.text-xl.mb-2.leading-tight')
+    if (text === 'Have you thanked a creator today?') {
+        console.log(text)
+        return true
+    } else {
+        return false
+    }
 
 }
 
