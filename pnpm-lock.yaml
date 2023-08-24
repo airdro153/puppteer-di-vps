@@ -14,12 +14,15 @@ dependencies:
   puppeteer-extra:
     specifier: ^3.3.6
     version: 3.3.6(puppeteer@21.1.0)
+  puppeteer-extra-plugin-block-resources:
+    specifier: ^2.4.3
+    version: 2.4.3(puppeteer-extra@3.3.6)
   puppeteer-extra-plugin-stealth:
     specifier: ^2.11.2
     version: 2.11.2(puppeteer-extra@3.3.6)
   puppeteer_handles:
-    specifier: ^1.0.0
-    version: 1.0.0
+    specifier: ^1.0.2
+    version: 1.0.2
   user-agents:
     specifier: ^1.0.1444
     version: 1.0.1444
@@ -1076,6 +1079,23 @@ packages:
       - utf-8-validate
     dev: false
 
+  /puppeteer-extra-plugin-block-resources@2.4.3(puppeteer-extra@3.3.6):
+    resolution: {integrity: sha512-WLxkytm3Nn6D+3N8lFMIi9lL9lLA1mTRHZAflR+zDs9/d1oOYVy52pWPaiQaetOObgfHDpPlHBmzHE2Yhr3ZnQ==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      puppeteer-extra: '*'
+    peerDependenciesMeta:
+      puppeteer-extra:
+        optional: true
+    dependencies:
+      debug: 4.3.4
+      puppeteer-extra: 3.3.6(puppeteer@21.1.0)
+      puppeteer-extra-plugin: 3.2.3(puppeteer-extra@3.3.6)
+    transitivePeerDependencies:
+      - playwright-extra
+      - supports-color
+    dev: false
+
   /puppeteer-extra-plugin-stealth@2.11.2(puppeteer-extra@3.3.6):
     resolution: {integrity: sha512-bUemM5XmTj9i2ZerBzsk2AN5is0wHMNE6K0hXBzBXOzP5m5G3Wl0RHhiqKeHToe/uIH8AoZiGhc1tCkLZQPKTQ==}
     engines: {node: '>=8'}
@@ -1196,8 +1216,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /puppeteer_handles@1.0.0:
-    resolution: {integrity: sha512-De0L2DE7awNtGf5uv4UYsRBa3k8uBdnAYIzGEKDqw5fBMzGo4yoMwr6wuwDlmb0KyW9kov9G5aCalKwjH5uwpw==}
+  /puppeteer_handles@1.0.2:
+    resolution: {integrity: sha512-KT0Y/HZ01kNpyrPsdpSvFtpi85Ns5lWgWUtfmNudC8n89VL1U3djjfkeuoWztzEAPIyKiRHrAhZy6lThxMcxzQ==}
     dev: false
 
   /qs@6.11.0:

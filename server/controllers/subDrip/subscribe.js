@@ -9,30 +9,36 @@ const phantom = path.join(__dirname, '..', '..', '..', 'Extensions', 'bfnaelmome
 
 const loginSubscribe = async (privateKey) => {
     const chrome = await Chrome(phantom)
+    try {
+        if (privateKey.includes(' ')) {
+            const succses = await loginWithPharse(chrome, privateKey)
+            if (succses === true) {
+                const valid = await subscribe(chrome)
+                await chrome.browser.close()
+                return { status: 'success', subscribe: valid.length }
+            } else {
+                await chrome.browser.close()
+                return { status: 'failed' }
+            }
 
-    if (privateKey.includes(' ')) {
-        const succses = await loginWithPharse(chrome, privateKey)
-        if (succses === true) {
-            const valid = await subscribe(chrome)
-            await chrome.browser.close()
-            return { status: 'success', subscribe: valid.length }
+
         } else {
-            await chrome.browser.close()
-            return { status: 'failed' }
+            const succses = await loginWithPrivateKey(chrome, privateKey)
+            if (succses === true) {
+                const valid = await subscribe(chrome)
+                await chrome.browser.close()
+                return { status: 'success', subscribe: valid.length }
+            } else {
+                await chrome.browser.close()
+                return { status: 'failed' }
+            }
         }
 
-
-    } else {
-        const succses = await loginWithPrivateKey(chrome, privateKey)
-        if (succses === true) {
-            const valid = await subscribe(chrome)
-            await chrome.browser.close()
-            return { status: 'success', subscribe: valid.length }
-        } else {
-            await chrome.browser.close()
-            return { status: 'failed' }
-        }
+    } catch (e) {
+        await chrome.browser.close()
+        return await loginSubscribe(privateKey)
     }
 }
+
 
 module.exports = loginSubscribe
