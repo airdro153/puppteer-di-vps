@@ -1,10 +1,16 @@
 const puppeteer = require('puppeteer-extra')
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+
+puppeteer.use(require('puppeteer-extra-plugin-block-resources')({
+    blockedTypes: new Set(['image', 'stylesheet', 'media'])
+}))
+
 const UserAgent = require('user-agents');
-
-
 const userAgent = new UserAgent();
+
 puppeteer.use(StealthPlugin())
+
+
 
 
 
@@ -44,11 +50,7 @@ const browserWithoutProxy = async (extansion) => {
     const page = await browser.newPage();
     await page.setUserAgent(userAgent.toString());
     await page.setRequestInterception(true);
-    page.on('request', (req) => {
-        const headers = req.headers();
-        headers['X-Forwarded-For'] = generate_random_ip(); // Ganti dengan alamat IP palsu yang diinginkan
-        req.continue({ headers });
-    });
+    await page.setExtraHTTPHeaders({ 'X-Forwarded-For': generate_random_ip() })
     return { page: page, browser: browser }
 }
 

@@ -24,9 +24,9 @@ const loginWithPharse = async (chrome, pharse) => {
     await actionP.clickSelector(page, 'body > div.wallet-adapter-modal.wallet-adapter-modal-fade-in > div.wallet-adapter-modal-container > div > ul > li > button')
 
     const popup = await actionP.handlePopUpExtansion(browser);
-    await actionP.clickSelector(popup, '#root > div > div.sc-fpyFWH.giXzZU > div.sc-bZSZLb.sc-faIbUi.jUgnQR.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY')
+    await actionP.clickSelector(popup, '#root > div > div.sc-fpyFWH.giXzZU > div.sc-bZSZLb.sc-faIbUi.jUgnQR.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY',100)
     const popup2 = await actionP.handlePopUpExtansion(browser);
-    await actionP.clickSelector(popup2, '#root > div > div.sc-bdvvtL.dvIiel > div > div.sc-bZSZLb.sc-faIbUi.dpOAcL.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY')
+    await actionP.clickSelector(popup2, '#root > div > div.sc-bdvvtL.dvIiel > div > div.sc-bZSZLb.sc-faIbUi.dpOAcL.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY',100)
 
     await page.waitForSelector("#app > div > nav > div > div > div:nth-child(2) > div > a.inline-flex.items-center.border-dashed.border-b-2.border-purple-500.px-1.pt-1.font-medium.text-white.relative.top-\\[2px\\]")
     const text = await actionP.extractTextFromSelector(page, '#app > div > main > div.mx-auto.rounded.p-3.animate-gradient.bg-gradient-animation.bg-\\[length\\:200\\%_200\\%\\].mb-8 > div > div.text-left.md\\:ml-6.md\\:flex-1 > p.text-xl.mb-2.leading-tight', 50)
@@ -73,9 +73,9 @@ const loginWithPrivateKey = async (chrome, PrivateKey) => {
     await actionP.clickSelector(page, 'body > div.wallet-adapter-modal.wallet-adapter-modal-fade-in > div.wallet-adapter-modal-container > div > ul > li > button')
 
     const popup = await actionP.handlePopUpExtansion(browser);
-    await actionP.clickSelector(popup, '#root > div > div.sc-fpyFWH.giXzZU > div.sc-bZSZLb.sc-faIbUi.jUgnQR.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY')
+    await actionP.clickSelector(popup, '#root > div > div.sc-fpyFWH.giXzZU > div.sc-bZSZLb.sc-faIbUi.jUgnQR.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY',100)
     const popup2 = await actionP.handlePopUpExtansion(browser);
-    await actionP.clickSelector(popup2, '#root > div > div.sc-bdvvtL.dvIiel > div > div.sc-bZSZLb.sc-faIbUi.dpOAcL.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY')
+    await actionP.clickSelector(popup2, '#root > div > div.sc-bdvvtL.dvIiel > div > div.sc-bZSZLb.sc-faIbUi.dpOAcL.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY',100)
 
     await page.waitForSelector("#app > div > nav > div > div > div:nth-child(2) > div > a.inline-flex.items-center.border-dashed.border-b-2.border-purple-500.px-1.pt-1.font-medium.text-white.relative.top-\\[2px\\]")
     const text = await actionP.extractTextFromSelector(page, '#app > div > main > div.mx-auto.rounded.p-3.animate-gradient.bg-gradient-animation.bg-\\[length\\:200\\%_200\\%\\].mb-8 > div > div.text-left.md\\:ml-6.md\\:flex-1 > p.text-xl.mb-2.leading-tight', 1000)
