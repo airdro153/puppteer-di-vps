@@ -33,9 +33,9 @@ const garap = async (chrome, refCode) => {
     await actionP.clickSelector(kerja, 'body > div.wallet-adapter-modal.wallet-adapter-modal-fade-in > div.wallet-adapter-modal-container > div > ul > li > button')
 
     const popup = await actionP.handlePopUpExtansion(browser);
-    await actionP.clickSelector(popup, '#root > div > div.sc-fpyFWH.giXzZU > div.sc-bZSZLb.sc-faIbUi.jUgnQR.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY')
+    await actionP.clickSelector(popup, '#root > div > div.sc-fpyFWH.giXzZU > div.sc-bZSZLb.sc-faIbUi.jUgnQR.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY', 100)
     const popup2 = await actionP.handlePopUpExtansion(browser);
-    await actionP.clickSelector(popup2, '#root > div > div.sc-bdvvtL.dvIiel > div > div.sc-bZSZLb.sc-faIbUi.dpOAcL.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY')
+    await actionP.clickSelector(popup2, '#root > div > div.sc-bdvvtL.dvIiel > div > div.sc-bZSZLb.sc-faIbUi.dpOAcL.gIfJjz > div > button.sc-hKwDye.ljaZWs.sc-jRQBWg.kHmDzY', 100)
 
     await actionP.fillInputsArray(kerja, '.mb-16 input', refCode)
     await actionP.clickSelector(kerja, '#app > div > div.max-w-2xl.text-center > form > button')
